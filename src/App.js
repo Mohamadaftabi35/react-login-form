@@ -42,8 +42,8 @@ function App() {
         }
         if (!values.password) {
             errors.password = "Password is required";
-        } else if (values.password.length < 4) {
-            errors.password = "Password must be more than 4 characters";
+        } else if (values.password.length < 8) {
+            errors.password = "Password must be more than 8 characters";
         } else if (values.password.length > 10) {
             errors.password = "Password cannot exceed more than 10 characters";
         }
@@ -66,13 +66,14 @@ function App() {
                 )}
 
                 <form onSubmit={handleSubmit}>
-                    <h1>Sign Up</h1>
+                    <h1 className="display-5 text-center">Sign Up</h1>
                     <div className="ui divider"></div>
                     <div className="ui form">
                         <div className="field">
-                            <label>Username</label>
+                            <label for="username-id" className="form-label">Username</label>
                             <input
                                 type="text"
+                                id="username-id"
                                 name="username"
                                 placeholder="Choose a username"
                                 value={formValues.username}
@@ -81,8 +82,9 @@ function App() {
                         </div>
                         <p>{formErrors.username}</p>
                         <div className="field">
-                            <label>Email</label>
+                            <label for="Email-id" className="form-label">Email</label>
                             <input
+                                id="Email-id"
                                 type="text"
                                 name="email"
                                 placeholder="Email"
@@ -92,8 +94,9 @@ function App() {
                         </div>
                         <p>{formErrors.email}</p>
                         <div className="field">
-                            <label>Password</label>
+                            <label for="password-id" className="form-label">Password</label>
                             <input
+                                id="password-id"
                                 type="password"
                                 name="password"
                                 placeholder="Password"
@@ -103,8 +106,9 @@ function App() {
                         </div>
                         <p>{formErrors.password}</p>
                         <div className="field">
-                            <label>Confirm Password</label>
+                            <label for="Confirm-pass-id" className="form-label">Confirm Password</label>
                             <input
+                                id="Confirm-pass-id"
                                 type="password"
                                 name="confirmPassword"
                                 placeholder="Confirm password"
@@ -113,7 +117,9 @@ function App() {
                             />
                         </div>
                         <p>{formErrors.confirmPassword}</p>
-                        <button className="fluid ui button blue">Submit</button>
+                        <div className="d-grid">
+                        <button className="btn btn-outline-success">Submit</button>
+                       </div>
                     </div>
                 </form>
                 <div className="text">
